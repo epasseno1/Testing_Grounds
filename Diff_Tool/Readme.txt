@@ -4,7 +4,9 @@ Libraries that will be used in the process.
 
 pyinstaller .exe
 Tkinter GUI
-pyclip 
+pyclip
+os 
+platform
 
 Main functions - 
 

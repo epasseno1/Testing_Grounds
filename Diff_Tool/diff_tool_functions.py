@@ -16,7 +16,6 @@ from pathlib import Path
 
 def file_import():
     """A function that can be used to locate files on the C: drive and copy their ABS or REL path to the clipboard."""
-    #found = False
     tmp_ObType= input("Is the item you are searching for folder (1) or file (2)? ")
     tmp_ObName = input("Please enter the name of the object you wish to locate.")
     tmp_file_found = fileObjectLocator(tmp_ObName, int(tmp_ObType))

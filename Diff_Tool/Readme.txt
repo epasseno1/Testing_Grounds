@@ -39,6 +39,15 @@ Then, the file object locater will take that information, perform a search, then
 file was found, return false and no file path. If the search succeeds, then return true, and the 
 absolute path for the object. 
 
+An approach to finding multiple values would be to append reseults to a list, and then filter
+any new results from an ongoing search. once the program finds a result it updates the list,
+and continues the walk. 
+
+If the program restarts the walk and then uses the list to skip over duplcates, this is going
+to prolong the search process. 
+
+
+
 
 
 

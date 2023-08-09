@@ -11,34 +11,36 @@ platform
 Main functions - 
 
 The ability to create filters that will remove dates and other information using 
-regular expressions
+pre-built regular expressions.
 
 ALlow the creation of custom filters using regular
-expressions
+expressions.
 
-integrate readio buttons into the gui that allow the toggling
-of search critera
+integrate radio buttons into the gui that allow the toggling
+of search critera.
 
-Allow for the files to be searched for by name
+Allow for the files to be searched for by name or folder. If the desired file is in a .zip folder, the program will unzip the folder in the desired directory,
+and load the desired unzipped file into the program. 
 
 Within the GUI, show the differences in a different color than the
 clear text.
 
+Allow for users to copy snippets of text and have the program grab clipboard contents for 
+analysis.
 
 
-Problem:
-
+Problem #1:
 I want to nest everything into a class to make object reference much easier. 
 
 
 
-Problem:
+Problem #2:
 
 I need to introduce logic and controls for the file search function that will allow 
 for remediation in the event that a file is not found, or there are duplicate files.
 
 
-File found - Good
+File & folder found - working for the first value closest to the root directory.
 
 Multiple files found - Need to append the absolute paths to a list, then present the 
 list to the user and allow them to choose the index of the item that they want. 

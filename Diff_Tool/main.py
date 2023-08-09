@@ -11,10 +11,8 @@ while program_run:
     if user_selection == "1":
         file_import()
     if user_selection == "2":
-        tmp_ObType= input("Is the item you are searching for folder (1) or file (2): ")
-        tmp_ObName = input("Please enter the name of the object you wish to locate: ")
-        fileObjectLocator(tmp_ObType, int(tmp_ObName))
-
+        obj_location = get_obj_name()
+        print(obj_location)
         
 
 

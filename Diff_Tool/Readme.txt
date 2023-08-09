@@ -32,6 +32,16 @@ for remediation in the event that a file is not found, or there are duplicate fi
 This will require an input validation like function to serve as a loop 
 
 
+File found - Good
+
+Multiple files found - Need to append the absolute paths to a list, then present the 
+list to the user and allow them to choose the index of the item that they want. 
+
+No files found - I need to make sure that if no files were found that walk error out properly
+
+
+
+
 
 
 I will use the file locater function to get the input from the user on the file they want to use

@@ -26,10 +26,16 @@ clear text.
 
 
 
+Problem:
+
+I want to nest everything into a class to make object reference much easier. 
+
+
+
+Problem:
+
 I need to introduce logic and controls for the file search function that will allow 
 for remediation in the event that a file is not found, or there are duplicate files.
-
-This will require an input validation like function to serve as a loop 
 
 
 File found - Good
@@ -42,6 +48,23 @@ No files found - I need to make sure that if no files were found that walk error
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Notes:
 
 
 I will use the file locater function to get the input from the user on the file they want to use

@@ -31,13 +31,16 @@ from pathlib import Path
 
 
 class Core():
+    """A class that will house the main logic for the program."""
 
 
 
-    def __init__(self, current_obj_1= {"object_type": "", "object_name":""}, current_obj_2= {"object_type": "", "object_name":""}):
+    def __init__(self, current_obj= {"object_type": "", "object_name":""}, obj_1 ="", obj_2 = ""):
         """Constructor for the core class."""
-        self.current_obj_1 = current_obj_1
-        self.current_obj_2 = current_obj_2
+        self.current_obj = current_obj
+        self.obj_1 = obj_1
+        self.obj_2 = obj_2
+
 
 
     # def file_import():
@@ -53,38 +56,46 @@ class Core():
         tmp_ObjType= input("Is the item you are searching for folder (1) or file (2): ")
         tmp_ObName = input("Please enter the name of the object you wish to locate: ")
         # Here I need to start the while false loop and send the input over to the validator
-        # Things to validate for obj type are that the input is nothing but numbers, and not empty
-        # things to validate for the file name; ban special characters, limit length of filename, no blank values. 
+
+        self.current_obj["object_type"] = tmp_ObjType
+        self.current_obj["object_name"] = tmp_ObName
 
 
-        abs_path = self.fileObjectLocator(self.current_obj_1["object_type"], int(tmp_ObjType["object_name"]))
+        objname = self.fileObjectLocator()
+
+        print(objname)
+
+        
+
+
+
+    # def obj_name_checker(self,tmp_type,tmp_name):
+    #     """A function used to perform input validation on objects using regular expressions.mccd
+    #     """
+    #     # Things to validate for obj type are that the input is nothing but numbers, and not empty
+    #     # things to validate for the file name; ban special characters, limit length of filename, no blank values. 
         
 
 
-    def obj_name_checker(self,tmp_name,tmp_type):
-        """A function used to perform input validation on objects using regular expressions.mccd
-        """
-        print(tmp_name)
-        print(tmp_type)
 
-
-
-    def file_import(self):
-        """A function that can be used to locate files on the C: drive and copy their ABS or REL path to the clipboard."""
-        Object = self.get_obj_name()
-        print(Object)
+    # def file_import(self):
+    #     """A function that can be used to locate files on the C: drive and copy their ABS or REL path to the clipboard."""
+    #     Object = self.get_obj_name()
+    #     print(Object)
 
         
-    def fileObjectLocator(self,temp_fileN, temp_type):
+    def fileObjectLocator(self):
         root = self.getPath()
         my_return = os.walk(root)
+        #print(self.current_obj)
 
         for item in my_return:
-            for filename in item[temp_type]:
-                if filename == temp_fileN:
+            for filename in item[int(self.current_obj["object_type"])]:
+                if filename == self.current_obj["object_name"]:
                     location = (os.path.join(item[0], filename))
                     return location
 
+#TODO need to get the global variable to be updated with teh absolute pat
 
 
 

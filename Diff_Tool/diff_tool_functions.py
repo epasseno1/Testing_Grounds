@@ -43,51 +43,52 @@ class Core():
 
 
 
-    # def file_import():
-    """Will be used for input validation and looping, but main logic needs work still. """
-    #     """A function that can be used to import files."""
-    #     tmp_file = file_locator()
-    #     print(tmp_file)
+    def file_import(self):
+        """Will be used for input validation and looping, but main logic needs work still. """
+        """A function that can be used to import files."""
+        object_choice = input("Are you importing object 1 or object 2: ")
+        
+        if object_choice == "1":
+            self.obj_1 = self.get_obj_location()
+            print(f"Here is the path of the file you selected: {self.obj_1}")
+            
+        elif object_choice == "2":
+            self.obj_2 = self.get_obj_location()
+            print(f"Here is the path of the file you selected: {self.obj_2}")
+            
+        else:
+            print("you entered an invalid option")
+
+            
+
+    def print_objects(self):
+        """A method that will print the values of the current objects"""
+        print(f"\nObject 1 is current stored as:{self.obj_1}\n")
+        print(f"Object 2 is current stored as:{self.obj_2}\n")
 
 
-
-    def get_obj_name(self):
+    def get_obj_location(self):
         """A function that is used to capture the name of an object or file, and pass it to a validator"""
-        tmp_ObjType= input("Is the item you are searching for folder (1) or file (2): ")
-        tmp_ObName = input("Please enter the name of the object you wish to locate: ")
+        self.current_obj["object_type"] = input("Is the item you are searching for folder (1) or file (2): ")
+        self.current_obj["object_name"] = input("Please enter the name of the object you wish to locate: ")
         # Here I need to start the while false loop and send the input over to the validator
-
-        self.current_obj["object_type"] = tmp_ObjType
-        self.current_obj["object_name"] = tmp_ObName
-
-
-        objname = self.fileObjectLocator()
-
-        print(objname)
+        return_value = self.fileObjectLocator()
+        return return_value
 
         
 
 
 
-    # def obj_name_checker(self,tmp_type,tmp_name):
-    #     """A function used to perform input validation on objects using regular expressions.mccd
-    #     """
-    #     # Things to validate for obj type are that the input is nothing but numbers, and not empty
-    #     # things to validate for the file name; ban special characters, limit length of filename, no blank values. 
-        
+    def obj_name_checker(self,tmp_type,tmp_name):
+        """A function used to perform input validation on objects using regular expressions.mccd
+        """
 
 
-
-    # def file_import(self):
-    #     """A function that can be used to locate files on the C: drive and copy their ABS or REL path to the clipboard."""
-    #     Object = self.get_obj_name()
-    #     print(Object)
 
         
     def fileObjectLocator(self):
         root = self.getPath()
         my_return = os.walk(root)
-        #print(self.current_obj)
 
         for item in my_return:
             for filename in item[int(self.current_obj["object_type"])]:

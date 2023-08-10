@@ -9,7 +9,7 @@ core_method = Core()
 
 while program_run:
     
-    user_selection = input("\nPlease choose an operation to perform:\n\nUpload item #1\nSearch for an item #2\nPrint current objects #3\n'q' for quit\n\nSelection: ")
+    user_selection = input("\nPlease choose an operation to perform:\n\nUpload item (1)\nSearch for an item (2)\nPrint current objects (3)\n'q' for quit\n\nSelection: ")
 
     if user_selection == "1":
         core_method.file_import()

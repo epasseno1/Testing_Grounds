@@ -5,35 +5,8 @@ import shutil
 from pathlib import Path
 
 
-
-
-
-# Variables within the core program
-#
-#Current object 1, current object 2, object type, search results
-# 
-# 
-#
-# local variables
-#tmp object type, temp object name
-#
-
-# Logic for updated file search - 
-# Check to see if there are values for current obj 1, if so, swap to obj2
-# If there are values present for both obj1 and 2, then ask the user if they want to 
-# perform another search, if so, then reset the dictionaries to their default values, 
-# and begin the first search. 
-
-
-
-
-
-
-
 class Core():
     """A class that will house the main logic for the program."""
-
-
 
     def __init__(self, current_obj= {"object_type": "", "object_name":""}, obj_1 ="", obj_2 = ""):
         """Constructor for the core class."""
@@ -74,17 +47,10 @@ class Core():
         # Here I need to start the while false loop and send the input over to the validator
         return_value = self.fileObjectLocator()
         return return_value
-
-        
-
-
-
+     
     def obj_name_checker(self,tmp_type,tmp_name):
         """A function used to perform input validation on objects using regular expressions.mccd
         """
-
-
-
         
     def fileObjectLocator(self):
         root = self.getPath()
@@ -95,9 +61,6 @@ class Core():
                 if filename == self.current_obj["object_name"]:
                     location = (os.path.join(item[0], filename))
                     return location
-
-#TODO need to get the global variable to be updated with teh absolute pat
-
 
 
     def getPath(self):

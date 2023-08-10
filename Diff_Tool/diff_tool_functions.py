@@ -61,10 +61,6 @@ class Core():
     def fileObjectLocator(self):
         root = self.getPath()
         my_return = os.walk(root)
-        timer_thread = threading.Thread(target=self.timer_thread_meth)
-        search_thread = threading.Thread(target=self.fileObjectLocator)
-        search_thread.start()
-        timer_thread.start()
 
         for item in my_return:
             for filename in item[int(self.current_obj["object_type"])]:
@@ -72,14 +68,14 @@ class Core():
                     location = (os.path.join(item[0], filename))
                     return location
                 
-    def timer_thread_meth(self):
-        """A method that will be used to time out searches that are taking too long. This will
-        occur when a user searches for an item that. """
+    # def timer_thread_meth(self):
+    #     """A method that will be used to time out searches that are taking too long. This will
+    #     occur when a user searches for an item that. """
         
-        time.sleep(4) #this will be the time out threshold for the program to avoid long wait times. 
-        if self.search_thread.is_alive():
-            print("Search timed out")
-            self.search_thread.cancel()
+    #     time.sleep(4) #this will be the time out threshold for the program to avoid long wait times. 
+    #     if self.search_thread.is_alive():
+    #         print("Search timed out")
+    #         self.search_thread.cancel()
 
 
 

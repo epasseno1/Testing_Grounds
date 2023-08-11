@@ -24,28 +24,11 @@ label = tk.Label(root, text="Hello", font=('arial', 18))
 # in the above, the parent object is the main window (root), Text is self explanitory, 
 # and the fony uses the font type, and then the size of the font
 
-# in order to 
+# There are two parts to add the label, the second part is below
+label.pack()
 
 
 # Stopped at 5:21 - https://www.youtube.com/watch?v=ibf5cx221hk
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

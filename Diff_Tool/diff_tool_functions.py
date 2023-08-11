@@ -51,11 +51,6 @@ class Core():
         self.current_obj["object_name"] = input("Please enter the name of the object you wish to locate: ")
         self.current_obj["object_location"] = self.fileObjectLocator()
 
-    def print_objects(self):
-        """A method that will print the values of the current objects"""
-        print(f"\nObject 1 is currently stored as: {self.obj_1}\n")
-        print(f"Object 2 is currently stored as: {self.obj_2}\n")
-
     def getPath(self):
         """A function that will be used to determine the OS of the host system which is used for file lookups
         """
@@ -68,3 +63,7 @@ class Core():
         return root_fs
 
 
+    def print_objects(self):
+        """A method that will print the values of the current objects"""
+        print(f"\nObject 1 is currently stored as: {self.obj_1}\n")
+        print(f"Object 2 is currently stored as: {self.obj_2}\n")

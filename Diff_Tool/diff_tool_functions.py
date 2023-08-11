@@ -36,9 +36,9 @@ class Core():
             print("you entered an invalid option")
 
     def fileObjectLocator(self):
+        """A method that performs a file walk beginning at the root directory"""
         root = self.getPath()
         my_return = os.walk(root)
-
         for item in my_return:
             for filename in item[int(self.current_obj["object_type"])]:
                 if filename == self.current_obj["object_name"]:
@@ -46,32 +46,15 @@ class Core():
                     return location
                 
     def get_obj_location(self):
-
         """A function that is used to capture the name of an object or file, and pass it to a validator"""
         self.current_obj["object_type"] = input("Is the item you are searching for folder (1) or file (2): ")
         self.current_obj["object_name"] = input("Please enter the name of the object you wish to locate: ")
-        # Here I need to start the while false loop and send the input over to the validator
         self.current_obj["object_location"] = self.fileObjectLocator()
-        # return_value = 
-        # return return_value
 
     def print_objects(self):
         """A method that will print the values of the current objects"""
         print(f"\nObject 1 is currently stored as: {self.obj_1}\n")
         print(f"Object 2 is currently stored as: {self.obj_2}\n")
-
-    
-          
-
-                
-    # def timer_thread_meth(self):
-    #     """A method that will be used to time out searches that are taking too long. This will
-    #     occur when a user searches for an item that. """
-        
-    #     time.sleep(4) #this will be the time out threshold for the program to avoid long wait times. 
-    #     if self.search_thread.is_alive():
-    #         print("Search timed out")
-    #         self.search_thread.cancel()
 
     def getPath(self):
         """A function that will be used to determine the OS of the host system which is used for file lookups
